@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31320.298
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TesseractText", "TesseractText\TesseractText.pyproj", "{CAF240FB-ABCC-4635-AE92-90C1C2ADB414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAF240FB-ABCC-4635-AE92-90C1C2ADB414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF240FB-ABCC-4635-AE92-90C1C2ADB414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB4447D5-1953-44D2-ADE6-EE18A6B6A359}
+	EndGlobalSection
+EndGlobal
