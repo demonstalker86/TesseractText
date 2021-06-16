@@ -14,11 +14,11 @@ CUSTOM_CONFIG = r'--psm 6 --oem 3 -l eng+rus'
 
 text1 = pytesseract.image_to_string(img1,  config=CUSTOM_CONFIG)
 text2 = pytesseract.image_to_string(img2,  config=CUSTOM_CONFIG)
-print(text1, text2)
+print(text1.strip(), text2.strip())
 
 
 with open('foto_text1.txt', 'w') as text_file:
-    text_file.write(text1)
+    text_file.write(text1.strip())
 
 with open('foto_text2.txt', 'w') as text_file:
-    text_file.write(text2)
+    text_file.write(text2.strip())
