@@ -24,8 +24,10 @@
     <Compile Include="main.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="foto_text.jpeg" />
     <Content Include="foto_text.jpg" />
     <Content Include="foto_text.png" />
+    <Content Include="foto_text1.jpg" />
     <Content Include="foto_text1.txt" />
     <Content Include="foto_text2.txt" />
   </ItemGroup>
