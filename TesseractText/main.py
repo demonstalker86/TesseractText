@@ -3,11 +3,26 @@
 import pytesseract
 import cv2
 import numpy as np
+import os
+
+print("Текущая рабочая папка:", os.getcwd() + "\n\n")
 
 img1 = cv2.imread('foto_text.jpg')
+if img1 is None:
+    print('Файл foto_text.jpg не найден!')
+    exit(1)
+
 img2 = cv2.imread('foto_text1.jpg')
-pytesseract.pytesseract.tesseract_cmd = \
-    r'C:\Users\demonstalker show\AppData\Local\Tesseract-OCR\tesseract.exe'
+if img2 is None:
+    print('Файл foto_text1.jpg не найден!')
+    exit(1)
+
+try:
+    from local_config import TESSERACT_PATH
+    pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+except ImportError:
+    # Если файла нет, можно либо выдать ошибку, либо использовать путь по умолчанию
+    print("Предупреждение: local_config.py не найден. Tesseract может не работать.")
 
 CUSTOM_CONFIG = r'--psm 6 --oem 3 -l eng+rus'
 
@@ -23,10 +38,10 @@ processed_img1 = cv2.dilate(processed_img1, kernel, iterations = 1)
 processed_img2 = cv2.erode(inverted_bin2, kernel, iterations = 1)
 processed_img2= cv2.dilate(processed_img2, kernel, iterations = 1)
 
-text1 = pytesseract.image_to_string(processed_img1,  config=CUSTOM_CONFIG)
-print(text1.strip())
-text2 = pytesseract.image_to_string(processed_img2,  config=CUSTOM_CONFIG)
-print(text2.strip())
+text1 = pytesseract.image_to_string(processed_img1, config=CUSTOM_CONFIG).strip()
+text2 = pytesseract.image_to_string(processed_img2, config=CUSTOM_CONFIG).strip()
+
+print(text1 + "\n\n" + text2)
 
 
 with open('foto_text1.txt', 'w') as text_file:
